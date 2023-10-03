@@ -21,6 +21,10 @@ export interface Options {
    */
   token_secret?: string;
   /**
+   * OAuth2 credential. Required for Oauth endpoints.
+   */
+  bearer?: string;
+  /**
    * (optional) The API url if different from the default.
    */
   baseUrl?: string;
