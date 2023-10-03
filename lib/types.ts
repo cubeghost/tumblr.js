@@ -35,6 +35,13 @@ export interface Options {
 }
 
 /**
+ * An error with an attached API response
+ */
+export interface APIError extends Error {
+  body?: any;
+}
+
+/**
  * Handles the response from a client reuest
  *
  * @param err - error message
@@ -42,7 +49,7 @@ export interface Options {
  * @param response - raw response
  */
 export type TumblrClientCallback = (
-  err: Error | null,
+  err: APIError | Error | null,
   resp: Record<string, any> | null,
   response?: IncomingMessage | null | undefined,
 ) => void;
